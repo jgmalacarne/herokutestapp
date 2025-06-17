@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+install.packages("kableExtra")
 library(kableExtra)
 library(tidyverse)
 
