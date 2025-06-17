@@ -8,6 +8,8 @@
 #
 
 library(shiny)
+library(kableExtra)
+library(tidyverse)
 
 # Define server logic required to draw a histogram
 function(input, output, session) {
@@ -25,4 +27,15 @@ function(input, output, session) {
 
     })
 
-}
+
+    output$testtable <-  function()({
+      x    <- faithful[, 2]
+      xdata <- data.frame('Eruptions' = x)
+      xdata <- xdata %>% 
+        summarise( `Count` = n(),
+                   `Average` = mean(Eruptions))
+      
+    kbl(xdata, format="html") %>% kable_styling()
+    })
+  
+  }

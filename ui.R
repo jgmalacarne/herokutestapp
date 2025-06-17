@@ -8,6 +8,8 @@
 #
 
 library(shiny)
+library(kableExtra)
+library(tidyverse)
 
 # Define UI for application that draws a histogram
 fluidPage(
@@ -27,7 +29,12 @@ fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            plotOutput("distPlot")
-        )
+                plotOutput("distPlot"),
+        
+                
+                tableOutput("testtable")
+                )
+        
+        
     )
 )
