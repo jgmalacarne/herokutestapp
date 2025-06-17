@@ -8,9 +8,8 @@
 #
 
 library(shiny)
-install.packages("kableExtra")
-library(kableExtra)
-library(tidyverse)
+library(dplyr)
+library(gt)
 
 # Define UI for application that draws a histogram
 fluidPage(
@@ -33,7 +32,8 @@ fluidPage(
                 plotOutput("distPlot"),
         
                 
-                tableOutput("testtable")
+                gt_output("testtable")
+                
                 )
         
         
